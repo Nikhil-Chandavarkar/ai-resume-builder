@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F7F6F3;
+  --foreground: #2C2C2C;
+  --accent: #8B0000;
+  --neutral: #999999;
 }
 
 @theme inline {
@@ -22,5 +24,115 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
+
+/* Serif font for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Spacing scale: 8/16/24/40/64px using Tailwind utilities */
+/* This is achieved through px-2 (8px), px-4 (16px), px-6 (24px), px-10 (40px), px-16 (64px) */
+
+/* Accent color usage - sparingly */
+.accent {
+  color: var(--accent);
+}
+
+.accent-bg {
+  background-color: var(--accent);
+  color: white;
+}
+
+.accent-border {
+  border-color: var(--accent);
+}
+
+/* Print styling: keep resume strictly black & white, hide UI chrome */
+@page {
+  size: auto;
+  margin: 20mm;
+}
+
+@media print {
+  html, body {
+    background: white !important;
+    color: #000 !important;
+  }
+
+  /* Hide app chrome and controls */
+  nav, .no-print, .template-controls, .topbar, .no-print * {
+    display: none !important;
+  }
+
+  /* Ensure resume container prints cleanly */
+  .print-safe-wrapper, .print-safe-resume {
+    background: white !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  /* Neutralize accent colors and borders */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color: #000 !important;
+    background: transparent !important;
+    border-color: #000 !important;
+  }
+
+  /* Spacing consistency */
+  .print-safe-resume {
+    padding: 16mm !important;
+  }
+
+  /* Avoid splitting items across pages */
+  .avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Keep headings with first paragraph */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Prevent overflowing text */
+  p, span, li, h1, h2, h3 {
+    orphans: 3;
+    widows: 3;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
+  /* Remove colored backgrounds for templates */
+  .accent-bg, .bg-gradient-to-b, .accent {
+    background: transparent !important;
+    color: #000 !important;
+  }
+}
+
