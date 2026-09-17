@@ -243,7 +243,7 @@ Final Submission
 
 ## 📄 License
 
-This project is part of the KodNest Premium Build System.
+This project is part of the Jackson's Build System.
 
 ---
 
