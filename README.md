@@ -9,7 +9,7 @@ A premium step-by-step build system for creating an AI-powered resume builder ap
 **Styling:** Tailwind CSS  
 **Version:** 0.1.0
 
-This is Project 3 in the KodNest Premium Build System, implementing a complete 8-step development pipeline with:
+This is Project 3 in the Jackson's Build System, implementing a complete 8-step development pipeline with:
 - Artifact management and storage
 - Sequential step gating (no skipping)
 - Premium layout system with split view (70% main / 30% build panel)
