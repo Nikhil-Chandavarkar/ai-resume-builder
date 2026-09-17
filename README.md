@@ -1,4 +1,4 @@
-# AI Resume Builder — Project 3 (KodNest Premium Build Track)
+# Resume Builder — Project 3
 
 A premium step-by-step build system for creating an AI-powered resume builder application. This project implements a guided workflow with gating mechanics to prevent skipping steps.
 
